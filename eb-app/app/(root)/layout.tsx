@@ -7,7 +7,6 @@ export default function RootLayout({
     <main>
         SIDEBAR
         {children}
-        FOOTER
     </main>
   );
 }
