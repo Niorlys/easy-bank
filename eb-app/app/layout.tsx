@@ -7,7 +7,7 @@ const ibmPlexSerif = IBM_Plex_Serif({ subsets: ["latin"], weight: ["400", "700"]
 export const metadata: Metadata = {
   title: "EasyBank",
   description: "EasyBank is a online banking platform for your business or personal use",
-  icons: '/icons/logo.svg'
+  icons: '/icons/favicon.ico'
 };
 
 export default function RootLayout({
