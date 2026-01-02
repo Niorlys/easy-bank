@@ -1,3 +1,9 @@
+/* Recall how next.js handles layouts:
+app/layout.tsx
+  └─ {children} = app/(route_folder)/layout.tsx
+                    └─ {children} = app/(route_folder)/page.tsx
+*/
+
 import MobileNavBar from '@/components/MobileNavBar';
 import SideBar from '@/components/SideBar'
 import Image from 'next/image'
