@@ -10,18 +10,9 @@ import { useForm } from 'react-hook-form'
 import { Button } from "@/components/ui/button"
 import {
   Form,
-  FormControl,
-  FormDescription,
-  FormField,
-  FormItem,
-  FormLabel,
-  FormMessage,
 } from "@/components/ui/form"
-import { Input } from "@/components/ui/input"
+import CustomField from './CustomField'
 
-// We define a string parameters with two rulles, where rule 1 is that
-// the username must be at least 2 characters and in the second rule it
-//  must be less than 50 characters.
 const formSchema = z.object({
   email: z.string().email({message: 'Invalid email address'}),
 })
@@ -94,24 +85,8 @@ const AuthForm = ( {type}: {type : string}) => {
         {/*shadcn form component*/}
           <Form {...form}>
             <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-8">
-              <FormField
-                control={form.control}
-                name="email"
-                render={({ field }) => (
-                  <div className='form-item'>
-                      <FormLabel className='form-label'>Email</FormLabel>
-                      <div className='flex w-full flex-col'>
-                        <FormControl>
-                          <Input className='input-class' 
-                          placeholder="Enter your email" 
-                          {...field} />
-                        </FormControl>
-                        {/* Display the error message */}
-                        <FormMessage className='form-message mt-2' />
-                      </div>
-                  </div>
-
-                )}
+              <CustomField 
+                control={form.control} name="email" label="Email" placeholder='Enter your email'
               />
               <Button type="submit">Submit</Button>
             </form>
